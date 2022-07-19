@@ -2,18 +2,14 @@ package main
 
 import "fmt"
 
-func Increment(initial int) func() int {
-	i := initial
-
+func Increment(i int) func() int {
 	return func() int {
 		i++
 		return i
 	}
 }
 
-func Decrement(initial int) func() int {
-	i := initial
-
+func Decrement(i int) func() int {
 	return func() int {
 		i--
 		return i
@@ -26,5 +22,4 @@ func main() {
 	decrement := Decrement(num)
 
 	fmt.Println(increment(), decrement(), decrement()) // 11 9 8
-
 }
