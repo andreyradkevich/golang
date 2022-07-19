@@ -2,28 +2,29 @@ package main
 
 import "fmt"
 
-func Increment(num *int) func() {
-	return func() {
-		*num += 1
-		fmt.Println(*num, ": +")
+func Increment(initial int) func() int {
+	i := initial
+
+	return func() int {
+		i++
+		return i
 	}
 }
 
-func Decrement(num *int) func() {
-	return func() {
-		*num -= 1
-		fmt.Println(*num, ": -")
+func Decrement(initial int) func() int {
+	i := initial
+
+	return func() int {
+		i--
+		return i
 	}
 }
 
 func main() {
 	num := 10
-	increment := Increment(&num)
-	decrement := Decrement(&num)
+	increment := Increment(num)
+	decrement := Decrement(num)
 
-	increment() // 11: +
-	increment() // 12: +
-	decrement() // 11: -
-	decrement() // 10: -
-	decrement() // 9: -
+	fmt.Println(increment(), decrement(), decrement()) // 11 9 8
+
 }
