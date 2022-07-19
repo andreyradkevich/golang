@@ -13,4 +13,3 @@ func main() {
 	fmt.Println(intSlice)    // [0,0,0,0,0,0,0,0,0,0]
 	fmt.Println(stringSlice) // [         ]
 }
-

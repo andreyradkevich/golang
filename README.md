@@ -6,7 +6,7 @@ in root `main.go` file import this package by `import("golang/pkg/closure")`
 
 `git clean -n -d -x` - clean cached files
 
-export PATH=$PATH:/usr/local/go/bin
+`export PATH=$PATH:/usr/local/go/bin`
 
 `go build -gcflags "-m -l"` - check which parts of codes excape to the
 heap
